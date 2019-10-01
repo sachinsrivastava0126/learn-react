@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+//import firebase from 'firebase/app';
 
-function App() {
+
+// Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAFK3guxZWj8JyfwS4mrl_YvKIWvASrZzQ",
+    authDomain: "learn-react-shopping-car-abe33.firebaseapp.com",
+    databaseURL: "https://learn-react-shopping-car-abe33.firebaseio.com",
+    projectId: "learn-react-shopping-car-abe33",
+    storageBucket: "",
+    messagingSenderId: "272097234533",
+    appId: "1:272097234533:web:62fc0a8100ddf47a11808c",
+    measurementId: "G-4Z10K68CNK"
+};
+// Initialize Firebase
+//firebase.initializeApp(firebaseConfig);
+//firebase.analytics();
+
+const App = () => {
+  const [data, setData] = useState({});
+  const products = Object.values(data);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch('./data/products.json');
+      const json = await response.json();
+      setData(json);
+    };
+    fetchProducts();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ul>
+      {products.map(product => <li key={product.sku}>{product.title}</li>)}
+    </ul>
   );
-}
+};
 
 export default App;
