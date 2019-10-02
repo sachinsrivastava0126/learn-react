@@ -1,0 +1,39 @@
+.menu {
+    background: #00004d;
+    color: white;
+    font: Helvetica;
+    width: calc(100%-40px);
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: solid 1px black;    
+    padding: 20px;
+    font-weight: bold;
+}
+
+.menu-title {
+    background: black;
+    font-size: 24px;
+    width: 15%;
+    text-align: center;
+    padding: 10px;
+    border: solid 1px gold;
+}
+
+.menuOptions {
+	display: flex;
+	min-height: 100%;
+    margin-left: 50%;
+}
+    
+.filter, .sort, .cart {
+	display: flex;
+    font-weight: thin;
+	align-items: center;
+	padding: 0 5px 0;
+	width: 72px;
+	justify-content: center;
+    background: black;
+    border: solid 1px white;
+    margin-left: 70px;
+    cursor: pointer;
+}

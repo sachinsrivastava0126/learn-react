@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 //import firebase from 'firebase/app';
+import Menu from './components/Menu/Menu.js';
+import ItemDisplay from './components/Item/Item.js';
 
 
 // Your web app's Firebase configuration
@@ -18,22 +20,29 @@ import React, { useEffect, useState } from 'react';
 //firebase.analytics();
 
 const App = () => {
-  const [data, setData] = useState({});
-  const products = Object.values(data);
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch('./data/products.json');
-      const json = await response.json();
-      setData(json);
-    };
-    fetchProducts();
-  }, []);
+//  const [data, setData] = useState({});
+//  const products = Object.values(data);
+//  useEffect(() => {
+//    const fetchProducts = async () => {
+//      const response = await fetch('./data/products.json');
+//      const json = await response.json();
+//      setData(json);
+//    };
+//    fetchProducts();
+//  }, []);
 
   return (
-    <ul>
-      {products.map(product => <li key={product.sku}>{product.title}</li>)}
-    </ul>
+//    <ul>
+//      {products.map(product => <li key={product.sku}>{product.title}</li>)}
+//    </ul>
+      
+      <div>
+        <Menu/>
+        <ItemDisplay/>
+      </div>
   );
 };
+
+
 
 export default App;

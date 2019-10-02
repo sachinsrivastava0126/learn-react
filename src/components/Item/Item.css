@@ -1,0 +1,48 @@
+.items {
+	display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 20px;
+    list-style: none;
+    align-items: center;
+    text-align: center;
+}
+
+.item {
+    padding-bottom: 40px;
+
+}
+
+.itemImg{
+    max-width: 230px;
+    cursor: pointer;
+    border: solid 1px silver;
+    margin: 19px;
+}
+
+.name {
+	padding: 9px 9px 9px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.price {
+	padding: 0px 9px 9px;
+	font-size: 15px;
+}
+
+.addToCart {
+    border-radius: 4px;
+	background: gold;
+    margin-top: 10px;
+	color: white;
+    height: 39px;
+	align-items: center;
+	cursor: pointer;
+    width: 90%;
+	font-size: 17px;
+	font-weight: bold;
+	border: 2px solid grey;
+}
